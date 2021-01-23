@@ -9,9 +9,10 @@ export default function Home({ pinned }) {
       <div className={styles.main}>
         <h1>Levi Harrison</h1>
         <TagLine />
-      </div>
+			</div>
+			<h1 className={styles.openSource}>Open Source Projects:</h1>
       <div className={styles.repos}>
-        <div>{pinned.nodes.map((node, i) => <Repo data={node} item={i} /> )}</div>
+        <div>{pinned.nodes.map((node, i) => <Repo data={node} key={i} /> )}</div>
       </div>
     </>
   )
