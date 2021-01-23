@@ -1,9 +1,10 @@
 import styles from '../styles/Repo.module.css'
 
-const Repo = ({ data, item }) => {
-    return (
-        <div className={styles.repo} key={item}>
-            <h1>{data.name}</h1>
+const Repo = ({ data }) => {
+	return (
+				<a href={`https://github.com/${data.owner.login}/${data.name}`} target="_blank">
+        	<div className={styles.repo}>
+						<h1>{data.name}</h1>
             <h2>{data.owner.login}</h2>
             <p>{data.description}</p>
             <ul className={styles.languages}>
@@ -11,7 +12,8 @@ const Repo = ({ data, item }) => {
                     {node.name}
                 </li> )}
             </ul>
-        </div>
+					</div>
+				</a>
     )
 }
 
