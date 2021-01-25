@@ -1,0 +1,32 @@
+.main {
+  border: 4px solid white;
+  width: 20%;
+  margin: 4%;
+  padding: 1%;
+  border-radius: 3vh;
+}
+
+.title {
+  background-color: white;
+}
+
+.title h1 {
+  text-align: center;
+  color: black;
+  font-size: 4vh;
+}
+
+.preview {
+  text-align: center;
+}
+
+.tag {
+  display: inline;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 10px;
+  margin: 2%;
+  font-size: 1.5vh;
+}
