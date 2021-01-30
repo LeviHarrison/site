@@ -1,7 +1,7 @@
-import { GraphQLClient, gql } from 'graphql-request'
-import TagLine from '../components/tagline'
-import styles from '../styles/Home.module.css'
-import Repo from '../components/repo'
+import { GraphQLClient, gql } from "graphql-request";
+import TagLine from "../components/tagline";
+import styles from "../styles/Home.module.css";
+import Repo from "../components/repo";
 
 export default function Home({ pinned }) {
   return (
@@ -9,55 +9,59 @@ export default function Home({ pinned }) {
       <div className={styles.main}>
         <h1>Levi Harrison</h1>
         <TagLine />
-			</div>
-			<h1 className={styles.openSource}>Open Source Projects:</h1>
+      </div>
+      <h1 className={styles.openSource}>Open Source Projects:</h1>
       <div className={styles.repos}>
-        <div>{pinned.nodes.map((node, i) => <Repo data={node} key={i} /> )}</div>
+        <div>
+          {pinned.nodes.map((node, i) => (
+            <Repo data={node} key={i} />
+          ))}
+        </div>
       </div>
     </>
-  )
+  );
 }
 
 const query = gql`
-    {
-        user(login: "leviharrison") {
-          pinnedItems(first: 6) {
-            nodes {
-              ... on Repository {
+  {
+    user(login: "leviharrison") {
+      pinnedItems(first: 6) {
+        nodes {
+          ... on Repository {
+            name
+            description
+            stargazerCount
+            url
+            owner {
+              login
+            }
+            languages(first: 4) {
+              nodes {
                 name
-                description
-                stargazerCount
-                url
-                owner {
-                  login
-                }
-                languages(first: 4) {
-                  nodes {
-                    name
-                    color
-                  }
-                }
+                color
               }
             }
           }
         }
+      }
     }
-`
+  }
+`;
 
-const client = new GraphQLClient("https://api.github.com/graphql")
+const client = new GraphQLClient("https://api.github.com/graphql");
 
 const headers = {
-  authorization: "bearer " + process.env.GITHUB_ACCESS
-}
+  authorization: "bearer " + process.env.GITHUB_ACCESS,
+};
 
 export async function getStaticProps() {
-    const response = await client.request(query, {}, headers)
+  const response = await client.request(query, {}, headers);
 
-    return {
-      props: {
-        pinned: response.user.pinnedItems
-      },
+  return {
+    props: {
+      pinned: response.user.pinnedItems,
+    },
 
-      revalidate: 1800
-    }
+    revalidate: 1800,
+  };
 }
