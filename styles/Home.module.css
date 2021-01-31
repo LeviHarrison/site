@@ -7,8 +7,14 @@
   font-size: 5vw;
 }
 
-.openSource {
+.subheader {
   text-align: center;
-  font-size: 2.5vw;
+  font-size: 3vw;
 }
 
+.features {
+}
+
+.thumbnails {
+  margin: 1%;
+}

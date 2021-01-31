@@ -1,7 +1,7 @@
 import styles from "../styles/Thumbnail.module.css";
 import Link from "next/link";
 
-const Thumbnail = ({ title, preview, image, tag, slug }) => {
+const Thumbnail = ({ title, preview, image, slug }) => {
   return (
     <Link href={`/post/${slug}`}>
       <a>
@@ -11,13 +11,6 @@ const Thumbnail = ({ title, preview, image, tag, slug }) => {
           </div>
           <p className={styles.preview}>{preview}</p>
           {image ? <img className={styles.image} src={image} /> : null}
-          <br />
-          <li
-            className={styles.tag}
-            style={{ background: tag.color, color: "white" }}
-          >
-            {tag.name}
-          </li>
         </div>
       </a>
     </Link>
