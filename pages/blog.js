@@ -13,6 +13,16 @@ const posts = [
     },
     slug: "fios-exporter",
   },
+  {
+    title: "Grüvee",
+    preview: "Contributing to an Open Source music app",
+    image: "/gruvee-repo.png",
+    tag: {
+      name: "project",
+      color: "teal",
+    },
+    slug: "gruvee",
+  },
 ];
 
 export default function Blog() {
