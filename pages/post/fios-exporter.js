@@ -26,7 +26,8 @@ export default function Post({ repo }) {
         dashboard, but once I got that down, it was fairly simple to get the
         data I wanted. I then headed over to the data visualization tool Grafana
         and added some futuristic-looking graphs, as depicted above. The source
-        code can be accessed by going to the Github Repository linked below.
+        code for the project can be accessed by going to the Github Repository
+        linked below.
       </p>
       <Repo data={repo} />
     </>
