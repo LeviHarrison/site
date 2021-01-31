@@ -5,7 +5,8 @@ import styles from "../styles/Blog.module.css";
 const posts = [
   {
     title: "Fios Exporter",
-    preview: "Collect internet metrics from the Fios Quantum Gateway Router",
+    preview:
+      "A program that measures the performance of your home internet router",
     image: "/fios-exporter-grafana.png",
     tag: {
       name: "project",
@@ -15,13 +16,25 @@ const posts = [
   },
   {
     title: "Grüvee",
-    preview: "Contributing to an Open Source music app",
+    preview:
+      "I wrote a logging library (which records errors to the cloud) for an Open Source music app",
     image: "/gruvee-repo.png",
     tag: {
       name: "project",
       color: "teal",
     },
     slug: "gruvee",
+  },
+  {
+    title: "Social Sentiment",
+    preview:
+      "A program that measures the public sentiment about companies based natural language processing of Reddit.",
+    image: "/socialsentiment-graph.png",
+    tag: {
+      name: "project",
+      color: "teal",
+    },
+    slug: "socialsentiment",
   },
 ];
 
