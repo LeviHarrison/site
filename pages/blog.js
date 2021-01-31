@@ -3,16 +3,16 @@ import Header from "../components/header";
 import styles from "../styles/Blog.module.css";
 
 const posts = [
-  //  {
-  //    title: "Fios Exporter",
-  //    preview: "Collect internet metrics from the Fios Quantum Gateway Router",
-  //    image: "/fios-exporter-grafana.png",
-  //    tag: {
-  //      name: "project",
-  //      color: "teal",
-  //    },
-  //    slug: "fios-exporter",
-  //  },
+  {
+    title: "Fios Exporter",
+    preview: "Collect internet metrics from the Fios Quantum Gateway Router",
+    image: "/fios-exporter-grafana.png",
+    tag: {
+      name: "project",
+      color: "teal",
+    },
+    slug: "fios-exporter",
+  },
 ];
 
 export default function Blog() {
