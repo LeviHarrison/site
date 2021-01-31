@@ -11,8 +11,9 @@
 }
 
 .text {
-  font-size: 1.5vh;
+  font-size: 2vh;
   margin: 3%;
   margin-left: 6%;
   margin-right: 6%;
+  line-height: 3.2vh;
 }
