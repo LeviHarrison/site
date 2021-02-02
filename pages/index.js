@@ -22,7 +22,7 @@ const projects = [
   {
     title: "Social Sentiment",
     preview:
-      "A program that measures the public sentiment about companies based natural language processing of Reddit.",
+      "A program that measures the public sentiment about companies based on natural language processing of Reddit.",
     image: "/socialsentiment-graph.png",
     slug: "socialsentiment",
   },
