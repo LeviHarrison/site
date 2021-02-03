@@ -1,7 +1,7 @@
 import { GraphQLClient, gql } from "graphql-request";
 import TagLine from "../components/tagline";
 import styles from "../styles/Home.module.css";
-import Repo from "../components/repo";
+//import Repo from "../components/repo";
 import Thumbnail from "../components/thumbnail";
 
 const projects = [
@@ -22,7 +22,7 @@ const projects = [
   {
     title: "Social Sentiment",
     preview:
-      "A program that measures the public sentiment about companies based on natural language processing of Reddit.",
+      "A program that uses natural language processing to measure the sentiment of Reddit users towards major companies",
     image: "/socialsentiment-graph.png",
     slug: "socialsentiment",
   },
@@ -65,46 +65,47 @@ export default function Home({ pinned }) {
   );
 }
 
-const query = gql`
-  {
-    user(login: "leviharrison") {
-      pinnedItems(first: 6) {
-        nodes {
-          ... on Repository {
-            name
-            description
-            stargazerCount
-            url
-            owner {
-              login
-            }
-            languages(first: 4) {
-              nodes {
-                name
-                color
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-const client = new GraphQLClient("https://api.github.com/graphql");
-
-const headers = {
-  authorization: "bearer " + process.env.GITHUB_ACCESS,
-};
-
-export async function getStaticProps() {
-  const response = await client.request(query, {}, headers);
-
-  return {
-    props: {
-      pinned: response.user.pinnedItems,
-    },
-
-    revalidate: 1800,
-  };
-}
+//const query = gql`
+//  {
+//    user(login: "leviharrison") {
+//      pinnedItems(first: 6) {
+//        nodes {
+//          ... on Repository {
+//            name
+//            description
+//            stargazerCount
+//            url
+//            owner {
+//              login
+//            }
+//            languages(first: 4) {
+//              nodes {
+//                name
+//                color
+//              }
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//`;
+//
+//const client = new GraphQLClient("https://api.github.com/graphql");
+//
+//const headers = {
+//  authorization: "bearer " + process.env.GITHUB_ACCESS,
+//};
+//
+//export async function getStaticProps() {
+//  const response = await client.request(query, {}, headers);
+//
+//  return {
+//    props: {
+//      pinned: response.user.pinnedItems,
+//    },
+//
+//    revalidate: 1800,
+//  };
+//}
+//
