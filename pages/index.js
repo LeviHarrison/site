@@ -3,7 +3,7 @@ import Head from "next/head";
 import TagLine from "../components/tagline";
 import styles from "../styles/Home.module.css";
 import Repos from "../components/repos";
-import Thumbnail from "../components/thumbnail";
+import Projects from "../components/projects";
 
 const projects = [
   {
@@ -46,27 +46,13 @@ export default function Home({ pinned }) {
         </a>
       </div>
       <div className={styles.features}>
-        <div className={styles.projects}>
-          <h1 className={styles.subheader}>Projects</h1>
-          <div className={styles.thumbnails}>
-            {projects.map((project, i) => (
-              <Thumbnail
-                title={project.title}
-                preview={project.preview}
-                image={project.image}
-                tag={project.tag}
-                slug={project.slug}
-                key={i}
-              />
-            ))}
-          </div>
-        </div>  
+        <Projects projects={projects} />
         <Repos pinned={pinned} />
       </div>
     </>
   );
 }
-          
+
 const query = gql`
   {
     user(login: "leviharrison") {
