@@ -2,7 +2,7 @@ import { GraphQLClient, gql } from "graphql-request";
 import Head from "next/head";
 import TagLine from "../components/tagline";
 import styles from "../styles/Home.module.css";
-//import Repo from "../components/repo";
+import Repos from "../components/repos";
 import Thumbnail from "../components/thumbnail";
 
 const projects = [
@@ -29,7 +29,7 @@ const projects = [
   },
 ];
 
-export default function Home(/*{ pinned }*/) {
+export default function Home({ pinned }) {
   return (
     <>
       <Head>
@@ -60,63 +60,53 @@ export default function Home(/*{ pinned }*/) {
               />
             ))}
           </div>
-        </div>
-        {/*<div className={styles.project}>
-		      <h1 className={styles.subheader}>Open Source Work</h1>
-          <div className={styles.repos}>
-            {pinned.nodes.map((node, i) => (
-              <Repo data={node} key={i} />
-            ))}
-          </div>
-        </div>
-				*/}
+        </div>  
+        <Repos pinned={pinned} />
       </div>
     </>
   );
 }
+          
+const query = gql`
+  {
+    user(login: "leviharrison") {
+      pinnedItems(first: 6) {
+        nodes {
+          ... on Repository {
+            name
+            description
+            stargazerCount
+            url
+            owner {
+              login
+            }
+            languages(first: 4) {
+              nodes {
+                name
+                color
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
-//const query = gql`
-//  {
-//    user(login: "leviharrison") {
-//      pinnedItems(first: 6) {
-//        nodes {
-//          ... on Repository {
-//            name
-//            description
-//            stargazerCount
-//            url
-//            owner {
-//              login
-//            }
-//            languages(first: 4) {
-//              nodes {
-//                name
-//                color
-//              }
-//            }
-//          }
-//        }
-//      }
-//    }
-//  }
-//`;
-//
-//const client = new GraphQLClient("https://api.github.com/graphql");
-//
-//const headers = {
-//  authorization: "bearer " + process.env.GITHUB_ACCESS,
-//};
-//
-//export async function getStaticProps() {
-//  const response = await client.request(query, {}, headers);
-//
-//  return {
-//    props: {
-//      pinned: response.user.pinnedItems,
-//    },
-//
-//    revalidate: 1800,
-//  };
-//}
-//
+const client = new GraphQLClient("https://api.github.com/graphql");
 
+const headers = {
+  authorization: "bearer " + process.env.GITHUB_ACCESS,
+};
+
+export async function getStaticProps() {
+  const response = await client.request(query, {}, headers);
+
+  return {
+    props: {
+      pinned: response.user.pinnedItems,
+    },
+
+    revalidate: 1800,
+  };
+}

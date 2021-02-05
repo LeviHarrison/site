@@ -27,3 +27,8 @@
 .thumbnails {
   margin: 1%;
 }
+
+.features {
+  display: grid;
+  margin-bottom: 4%;
+}

@@ -1,7 +1,9 @@
 .repo {
   border: 3px solid white;
   padding: 1%;
-  margin: 4%;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 1%;
   border-radius: 16px;
   width: 20%;
   float: left;
