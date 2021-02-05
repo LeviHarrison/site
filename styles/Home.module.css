@@ -32,3 +32,21 @@
   display: grid;
   margin-bottom: 4%;
 }
+
+.tech {
+  text-align: center;
+  margin-top: 3%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.tech p {
+  font-size: 1vw;
+}
+
+.tech span {
+  font-weight: bold;
+  margin-left: 0.15%;
+  margin-right: 0.15%;
+}
+

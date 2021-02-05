@@ -45,6 +45,33 @@ export default function Home({ pinned }) {
           </div>
         </a>
       </div>
+      <div className={styles.tech}>
+        <p>
+          I "concentrate" on Backend development, but realistically my projects
+          are all over. I’ve done my fair share of API building for SaaS
+          projects, and also worked on (too) many websites, infrastructure,
+          hardware, desktop, and artificial intelligence.
+        </p>
+        <p>
+          I work mostly with <span style={{ color: "#00add8" }}>Golang</span>,
+          and <span style={{ color: "#f7df1e" }}>Javascript</span>/
+          <span style={{ color: "#61dafb" }}>React</span>/
+          <span style={{ color: "#563d7c" }}>CSS</span> for websites. Less
+          frequently, I use <span style={{ color: "#4584b6" }}>Python</span>,
+          <span style={{ color: "#555555" }}>C</span>,
+          <span style={{ color: "#3178c6" }}>Typescript</span>,
+          <span style={{ color: "#dea584" }}>Rust</span>, and{" "}
+          <span style={{ color: "#f34b7d" }}>C++</span>.
+        </p>
+        <p>
+          I use <span style={{ color: "#0db7ed" }}>Docker</span> for basically
+          every application I make and spin in
+          <span style={{ color: "#254c5b" }}>GRPC</span> for microservices. I’ve
+          spent way too long configuring
+          <span style={{ color: "#316ce4" }}>Kubernetes</span>, and currently
+          have a cluster running on a server in my basement.
+        </p>
+      </div>
       <div className={styles.features}>
         <Projects projects={projects} />
         <Repos pinned={pinned} />
