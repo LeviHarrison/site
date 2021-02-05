@@ -1,8 +1,8 @@
 import styles from '../styles/Repo.module.css'
 
-const Repo = ({ data }) => {
+const Repo = ({ click, data }) => {
 	return (
-				<a href={`https://github.com/${data.owner.login}/${data.name}`} target="_blank">
+				<a onClick={click(data.name)} href={`https://github.com/${data.owner.login}/${data.name}`} target="_blank">
         	<div className={styles.repo}>
 						<h1>{data.name}</h1>
             <h2>{data.owner.login}</h2>
