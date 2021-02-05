@@ -28,12 +28,18 @@ const projects = [
   },
 ];
 
-export default function Home({ pinned }) {
+export default function Home(/*{ pinned }*/) {
   return (
     <>
       <div className={styles.main}>
         <h1>Levi Harrison</h1>
         <TagLine />
+        <a href="https://github.com/LeviHarrison" target="_blank">
+          <div className={styles.github}>
+            <img src="/github.png" />
+            <span>/LeviHarrison</span>
+          </div>
+        </a>
       </div>
       <div className={styles.features}>
         <div className={styles.projects}>
@@ -109,3 +115,4 @@ export default function Home({ pinned }) {
 //  };
 //}
 //
+

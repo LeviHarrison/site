@@ -12,7 +12,16 @@
   font-size: 3vw;
 }
 
-.features {
+.github {
+  margin-top: 1%;
+}
+
+.github img {
+  width: 3.3vw;
+}
+
+.github span {
+  font-size: 0.8vw;
 }
 
 .thumbnails {
