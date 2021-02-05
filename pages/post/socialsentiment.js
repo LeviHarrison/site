@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Header from "../../components/header.jsx";
 import styles from "../../styles/Post.module.css";
 

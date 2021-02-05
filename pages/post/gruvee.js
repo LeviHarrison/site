@@ -1,4 +1,5 @@
 import { GraphQLClient, gql } from "graphql-request";
+import Head from "next/head";
 import Header from "../../components/header.jsx";
 import Repo from "../../components/repo.jsx";
 import styles from "../../styles/Post.module.css";
