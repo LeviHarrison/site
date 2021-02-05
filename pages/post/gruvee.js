@@ -6,6 +6,9 @@ import styles from "../../styles/Post.module.css";
 export default function Post({ repo }) {
   return (
     <>
+      <Head>
+        <title>Gruvee - Levi Harrison</title>
+      </Head>
       <Header />
       <h1 className={styles.main}>Grüvee</h1>
       <img className={styles.image} src="/gruvee-repo.png" />

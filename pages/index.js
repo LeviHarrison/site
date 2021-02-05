@@ -1,4 +1,5 @@
 import { GraphQLClient, gql } from "graphql-request";
+import Head from "next/head";
 import TagLine from "../components/tagline";
 import styles from "../styles/Home.module.css";
 //import Repo from "../components/repo";
@@ -31,6 +32,9 @@ const projects = [
 export default function Home(/*{ pinned }*/) {
   return (
     <>
+      <Head>
+        <title>Levi Harrison</title>
+      </Head>
       <div className={styles.main}>
         <h1>Levi Harrison</h1>
         <TagLine />

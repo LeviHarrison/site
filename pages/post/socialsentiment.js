@@ -4,6 +4,9 @@ import styles from "../../styles/Post.module.css";
 export default function Post() {
   return (
     <>
+      <Head>
+        <title>Social Sentiment - Levi Harrison</title>
+      </Head>
       <Header />
       <h1 className={styles.main}>Grüvee</h1>
       <img className={styles.image} src="/socialsentiment-graph.png" />

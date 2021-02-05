@@ -1,4 +1,5 @@
 import { GraphQLClient, gql } from "graphql-request";
+import Head from "next/head"
 import Header from "../../components/header.jsx";
 import Repo from "../../components/repo.jsx";
 import styles from "../../styles/Post.module.css";
@@ -6,6 +7,9 @@ import styles from "../../styles/Post.module.css";
 export default function Post({ repo }) {
   return (
     <>
+      <Head>
+        <title>Fios Exporter - Levi Harrison</title>
+      </Head>
       <Header />
       <h1 className={styles.main}>Fios Exporter</h1>
       <img className={styles.image} src="/fios-exporter-grafana.png" />
